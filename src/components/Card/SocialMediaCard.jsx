@@ -79,11 +79,8 @@ export function SocialMediaCard({socialCardData,mode}){
 
 
     const SingleViewCard = <div className="bg-white p-6 rounded-md shadow-md max-w-full"> 
-     
-    {/* Cover Photo */}
     <img src={socialCardData?.coverPhoto} alt="Cover Photo" className="w-full h-32 object-cover mb-4 rounded-md" />
 
-    {/* Profile Section */}
     <div className="flex items-center mb-4">
       <img src={socialCardData?.profilePic} alt="Profile" className="w-16 h-16 object-cover rounded-full mr-4" />
       <div>
@@ -92,11 +89,9 @@ export function SocialMediaCard({socialCardData,mode}){
       </div>
     </div>
 
-    {/* Bio and Status */}
     <p className="text-gray-900 mb-4">{socialCardData?.bio}</p>
     <p className="text-green-500 mb-4 font-bold">{socialCardData?.statusMessage}</p>
 
-    {/* Statistics */}
     <div className="flex justify-between text-gray-500 mb-4">
       <div>
       <p className="font-bold">Followers: <span className="text-blue-600"> {socialCardData?.followersCount}</span></p>
@@ -105,7 +100,6 @@ export function SocialMediaCard({socialCardData,mode}){
       <p className="font-bold">Posts: <span className="text-blue-600">{socialCardData?.postsCount}</span></p>
     </div>
 
-    {/* Additional Information */}
     <div className="mb-4">
       <p className="text-gray-700">
       {socialCardData?.gender}, {socialCardData?.birthDate} ({socialCardData?.pronouns})
@@ -116,8 +110,6 @@ export function SocialMediaCard({socialCardData,mode}){
         {socialCardData?.verifiedStatus ? 'Verified' : 'Not Verified'}
       </p>
     </div>
-
-    {/* Hobbies and Interests */}
     <div className="mb-4">
       <p className="text-gray-700">
         Hobbies: {socialCardData?.hobbies?.map((hobby, index) => (
@@ -137,20 +129,17 @@ export function SocialMediaCard({socialCardData,mode}){
       </p>
     </div>
 
-    {/* Education and Work */}
     <div className="mb-4">
       <p className="text-gray-700 font-bold">Education:  <span className="text-gray-500"> {socialCardData?.education}</span></p>
       <p className="text-gray-700 font-bold">Work: <span className="text-gray-500"> {socialCardData?.work}</span></p>
     </div>
    
 
-    {/* Contact Information */}
     <div className="mb-4">
       <p className="text-gray-700 font-bold">Email: <span className="text-gray-500">{socialCardData?.privacySettings?.showEmail ? socialCardData?.email : 'Private'}</span></p>
       <p className="text-gray-700 font-bold">Phone:  <span className="text-gray-500"> {socialCardData?.contactInfo?.phone}</span></p>
     </div>
 
-    {/* Custom Fields */}
     {socialCardData?.customFields?.map((field, index) => (
       <p key={index} className="text-gray-700">
         {field.fieldName}: {field.fieldValue}
